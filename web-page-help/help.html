@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <meta name="author" content="J.Fossy Weinzinger"/>
+  <meta name="publisher" content="J.Fossy Weinzinger"/>
+  <meta name="copyright" content="J.Fossy Weinzinger"/>
+  <meta name="content-language" content="en"/>
+  <meta name="description" content="RPNcalculator Help: description of all functions of the calculator"/>
+  <meta name="keywords" lang="en" content="rpn, calculator, stack, function"/>
+  <link rel="stylesheet" href="css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="css/smartphone.css" media="only screen and (max-device-width : 480px)" type="text/css"/>
+  <link rel="shurtcut icon" href="enter.ico" type="image/x-icon"/>
+  <title>RPNcalculator - Help</title>
+</head>
+<body>
+<h1>RPNcalculator Help</h1>
+<p>This is a RPN  calculator for android. RPN stands for Reverse Polnish Notation - see <a href="http://en.wikipedia.org/wiki/Reverse_Polish_Notation">RPN at wikipedia</a>. If you are not familar with RPN you might prefer another calculator such as.</p>
+
+<a name="content">
+<h2>Content</h2></a>
+<table>
+  <tr><td><a href="#keyboard">Virtual Keyboards</a></td> <td>how to find all keys</td></tr>
+  <tr><td><a href="#tricks">Tricks</a></td> <td>some tricks</td></tr>
+  <tr><td><a href="#numbers">Number Range</a></td> <td>what numbers are there</td></tr>
+  <tr><td><a href="#stack">Stack</a></td> <td>about the stack registers</td></tr>
+  <tr><td><a href="#options">Options</a></td> <td>what options are there</td></tr>
+  <tr><td><a href="#keys">All Keys</a></dt> <td>detailed infos about all keys</td></tr>
+  <tr><td><a href="#in-out-put">Functions &amp; Input &amp; Output</a></dt> <td>detailed infos about all functions and their effects on the stack</td></tr>
+</table>
+
+<a name="keyboard">
+<h2>Virtual Keyboards</h2></a>
+<p>There are three keyboards to have all keys of the calculator. You can switch from one keyboard to the other by sliding it away to the right for one other board - or to the left for the third board. The boards are arranged cyclic, so you can ever get to the other two regardless where you are.</p>
+<table class="keyboard">
+  <tr>
+    <td><img src="images/functions0.jpeg"/></td>
+    <td><a href="#statistics"><img src="images/statistics.jpeg"/></a></td>
+    <td><a href="#digits"><img src="images/digits.jpeg"/></a></td>
+    <td><a href="#functions"><img src="images/functions.jpeg"/></a></td>
+    <td><img src="images/statistics0.jpeg"/></td>
+  </tr>
+  <tr>
+    <td>Functions</td>
+    <td>Statistics</td>
+    <td>Digits</td>
+    <td>Functions</td>
+    <td>Statistics</td>
+  </tr>
+</table>
+<p>You have three choices to get the right keyboard in focus. You can slide it in with your fingers as descriped obove - you can use the menu - or you can use the cursor keys (left, right) or your trackball depending on your device.</p>
+
+<a name="digits">
+<h3><img src="images/digits.png"/> Digits Keyboard</h3></a>
+<p>This keyboard is to enter numbers and basic arithmetic operations.</p>
+<p>Numbers are entered in natural way; <span class="key">EEX</span> enters the exponent; <span class="key">CHS</span> change the sign of mantissa or exponent dependig which part you actualy enter. If you start entering a number with <span class="key">EEX</span> the mantissa 1 is entered automaticly for you.</p>
+<p><span class="key">&larr;</span> deletes the last entered digit. If you long press this key (or you are not in the number input mode) it deletes the whole X register.</p>
+
+<a name="functions">
+<h3><img src="images/functions.png"/> Functions Keyboard</h3></a>
+<p>The keylabels describe them selve.</p>
+
+<a name="statistics">
+<h3><img src="images/statistics.png"/> Statistics Keyboard</h3></a>
+<p>This is for statistics, storage, transformation and stack manipulation.</p>
+
+<a name="tricks">
+<h2>Tricks</h2></a>
+<p>Cause there are too few keys on one keyboard, there are some tricks to press keys not shown on the actual keyboard. These tricks are gestures with your fingers on the display area.
+</p>
+<table border="1">
+  <tr><th>gesture in display</th>                      <th>effect</th>                           </tr>
+  <tr><td>move left or move right</td>                 <td><span class="key">X&harr;Y</span></td></tr>
+  <tr><td>move down</td>                               <td><span class="key">R&darr;</span></td> </tr>
+  <tr><td>move up</td>                                 <td><span class="key">R&uarr;</span></td> </tr>
+</table>
+
+<p>If you long press the folowing keys you will get other effects.</p>
+
+<table border="1">
+  <tr><th>key to press long</th>                <th>effect</th>                                           </tr>
+  <tr><td><span class="key">RCL</span></td>     <td>show options and registers</td>                       </tr>
+  <tr><td><span class="key">&larr;</span></td>  <td>clear X regardless if in number input mode or not</td></tr>
+</table>
+
+<a name="numbers">
+<h2>Number Range</h2></a>
+<p>All calculations are done with javas Math double. So you will see numbers between <b>&plusmn;1.797693135&nbsp;<small>10<sup>308</sup></small></b>. The smallest positive number greater than 0; &epsilon;&nbsp;=&nbsp;<b>4.940656458&nbsp;<small>10<sup>-324</sup></small></b>. Depending on your calculations you can also get <b>NaN</b> or <b>&plusmn;&infin;</b>. NaN stands for Not A Number - which will say there is no real numeric result - e.g. 0/0&nbsp;=&nbsp;NaN . With &plusmn;&infin; you can still calculate - e.g. tan<sup>-1</sup>(&infin;)&nbsp;=&nbsp;&pi;/2 .</p>
+
+<a name="stack">
+<h2>Stack</h2></a>
+<p>This calculator has four stack register: X, Y, Z, T like the old good HP25, HP67, HP41C etc. - the <i>lastX</i> register save the value from X before the last operation. Calculations are done with X or X and Y and the result(s) are saved in X or X and Y or (in case of <i>factor</i>) in X, Y and Z. The display allways displays the X register.</p>
+<p>For stack manipulation you can use the keys <span class="key">R&darr;</span> and <span class="key">X&harr;Y</span>. <span class="key">R&darr;</span> rotates the four stack registers cyclic - move Y to X and so forth.</p>
+<p>When the stack is dropped T keeps its old value. This can be used to calculate polynomials with the Horna scheme (x is kept in T and come down to Z and Y):</p>
+<p>a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... a<sub>2</sub>x<sup>2</sup> + a<sub>1</sub>x + a<sub>0</sub></p>
+<p>Enter x - press <span class="key">ENTER&uarr;</span> three times enter a<sub>n</sub> press <span class="key">&times;</span>, start with a<sub>n-1</sub> and work down to a<sub>1</sub> - enter a<sub>i</sub> press <span class="key">+</span> press <span class="key">&times;</span> - at least enter a<sub>0</sub> press <span class="key">+</span> .</p>
+
+<a name="options">
+<h2><img src="images/options.png"/> Options</h2></a>
+<p>To get the options you can use the menu or you long press the <span class="key">RCL</span> key. The options are to select the display format, the angle mode and to display all registers. Use this to see which register (R4..R9) saves which statistics result.</p>
+
+<a name="keys">
+<h2>All Keys</h2></a>
+
+<h3><span class="key">ENTER&uarr;</span></h3>
+<p>Shifts all stack registers up (T is lost) - X is duplicated and the auto stack lift is disabled.</p>
+
+<h3><span class="key">EEX</span></h3>
+<p>Enter exponent.</p>
+
+<h3><span class="key">CHS</span></h3>
+<p>Change sign - while in number input changes the sign of mantissa or exponent. If not in number input changes the sign of X.</p>
+
+<h3><span class="key">&larr;</span></h3>
+<p>Clear last entered digit if in number input mode - zeros the X register otherwise.</p>
+
+<h3><span class="key">+</span> <span class="key">-</span> <span class="key">&times;</span> <span class="key">&divide;</span> <span class="key">y<sup><small>x</small></sup></span></h3>
+<p>Basic arithmetic operates on Y and X - e.g. Y&nbsp;&divide;&nbsp;X</p>
+
+<h3><span class="key">e<sup><small>x</small></sup></span>
+    <span class="key">ln</span>
+    <span class="key">10<sup><small>x</small></sup></span>
+    <span class="key">log</span>
+    <span class="key">sin</span>
+    <span class="key">cos</span>
+    <span class="key">tan</span>
+    <span class="key">sin<sup><small>-1</small></sup></span>
+    <span class="key">cos<sup><small>-1</small></sup></span>
+    <span class="key">tan<sup><small>-1</small></sup></span>
+    <span class="key">x<sup><small>2</small></sup></span>
+    <span class="key">&radic;x</span>
+    <span class="key">1/x</span>
+</h3>
+<p>These function operate on X - e.g. <span class="key">e<sup><small>x</small></sup></span> replace X with e<sup>X</sup>. <span class="key">ln</span> is logarithm base e - <span class="key">log</span> is logarithm base 10.</p>
+
+<h3><span class="key">&pi;</span></h3>
+<p>Simply lifts the stack and place &pi; in X.</p>
+
+<h3><span class="key">%</span></h3>
+<p>Operate on Y and X but does not drop the stack. Y is kept and X is replaced with Y&middot;X/100 . If you want to add 15% to 42: Enter 42 press <span class="key">ENTER&uarr;</span> enter 15 press <span class="key">%</span> now you can see 15% of 42 in X press <span class="key">+</span> to add it to Y which still holds 42.</p>
+
+<h3><span class="key">&Delta;%</span></h3>
+<p>This is the reverse operation of %. Calculate the percentual difference between X and Y . Y is 100% and Y is kept while no stack drop accure. X is replaced with 100&middot;(X&nbsp;-&nbsp;Y)/Y .</p>
+
+<h3><span class="key">int</span> <span class="key">frac</span></h3>
+<p>These functions reduce information. <span class="key">int</span> keeps the integer part of X and drops the fraction part. <span class="key">frac</span> keeps the fraction part and drops the integer part.</p>
+
+<h3><span class="key">last&nbsp;x</span></h3>
+<p>Lifts the stack and replace X with the X before the last operation.</p>
+
+<h3><span class="key">STO</span> <span class="key">RCL</span></h3>
+<p>There are 10 registers to save values beside the stack. The registers are named R0, R1, ... R9. To get a value from a register press <span class="key">RCL</span> (the keyboard automaticly swaps to the digits) and press the digit key for the register 0..9 . To save the value from X in a register press <span class="key">STO</span> (the keyboard is also swapped) and then press the digit key for the register. You can also use simple register aritmetic. The register aritmetic works with <span class="key">+</span>, <span class="key">-</span>, <span class="key">&times;</span> and <span class="key">&divide;</span>. E.g.: press <span class="key">STO</span> <span class="key">+</span> <span class="digit">2</span> to add the content of X to the content of R2 and save the result in R2.</p>
+
+<h3><span class="key">Cl&Sigma;</span></h3>
+<p>This simply clears the statistics registers R4..R9 and is used to start a statistical computation.</p>
+
+<h3><span class="key">&Sigma;+</span> <span class="key">&Sigma;-</span></h3>
+<p>The values in X and Y are added the the statistic registers. Y keeps it value, X is replaced with n - the values count. After <span class="key">&Sigma;+</span> and <span class="key">&Sigma;-</span> the stack lift is off - so you can get the old tuple by pressing <span class="key">last&nbsp;x</span> . <span class="key">&Sigma;-</span> is to correct a wrongly enterd tuple. The registers used for statistics are:</p>
+
+<table border="1">
+  <tr><td>R4:</td>  <td>&Sigma;x</td></tr>
+  <tr><td>R5:</td>  <td>&Sigma;x<small><sup>2</sup></small></td></tr>
+  <tr><td>R6:</td>  <td>&Sigma;y</td></tr>
+  <tr><td>R7:</td>  <td>&Sigma;y<small><sup>2</sup></small></td></tr>
+  <tr><td>R8:</td>  <td>&Sigma;xy</td></tr>
+  <tr><td>R9:</td>  <td>n</td></tr>
+</table>
+
+<h3><span class="key">mean</span> <span class="key">sdev</span></h3>
+<p></p>
+
+<h3><span class="key">x!</span></h3>
+<p>This calculates the factorial of X. If X is not an integer number the factorial is calculated from the integer part of that number.</p>
+
+<h3><span class="key">P<sub><small>x</small></sub><sup><small>y</small></sup></span></h3>
+<p>Calculating the number of X-<b>p</b>ermutations of Y. </p>
+
+<h3><span class="key">C<sub><small>x</small></sub><sup><small>y</small></sup></span></h3>
+<p>Calculating the number of X-<b>c</b>ombinations of Y. This is the number of possibilities to get subsets of X elements out of Y elements.</p>
+
+<h3><span class="key">mod</span></h3>
+<p>If you enter only interger numbers in Y and X this calculates the remainder of the integer divison Y / X . 
+But this function do a more general approach. (Without looking at the sign) you get the greatest number <i>m</i> less than X so that Y = <i>m</i> + <i>k</i> &middot; X (<i>k</i> is an integer - X, Y and <i>m</i> are not necessary integers).
+</p>
+
+<h3><span class="key">&rarr;P</span></h3>
+<p>Convert rectangular coordinates y stored in Y and x stored in X into polar coordinates r stored in X and &phi; stored in Y.</p>
+
+<h3><span class="key">&rarr;R</span></h3>
+<p>Convert polar coordinatesr r stored in X and &phi; stored in Y into recangular coordinates y stored in Y and x stored in X.</p>
+
+<h3><span class="key">&rarr;HMS</span></h3>
+<p>Convert decimal hours (or degres) stored in X into hours, minutes and seconds in X. Hours are left of the decimal point - minutes are at tenth and hundreth - seconds at thousandths and ten thousendth. E.g. 3.5 <span class="key">&rarr;HMS</span> you get 3.3000 - 3 hours, 30 minutes 0 seconds.</p>
+
+<h3><span class="key">&rarr;H</span></h3>
+<p>Convert hours (or degres) stored in X as hours, minutes and seconds to decimal hours in X. E.g. (11:59:24) 11.5924 <span class="key">&rarr;H</span> you get 11.99 (decimal hours). Some example: You start at 8:17 and work until 11:39 - how many hours did you work? 11.39 <span class="key">&rarr;H</span> 8.17 <span class="key">&rarr;H</span> <span class="key">-</span> your work took 3.37 hours.</p>
+
+<h3><span class="key">X&harr;Y</span></h3>
+<p>Exchange the stack registers X and Y.</p>
+
+<h3><span class="key">R&darr;</span></h3>
+<p>Rolls down the stack registers - will say X gets the value of Y, Y gets the value of Z, Z gets the value of T and T gets the value of X.</p>
+
+<h3><span class="key">gcd</span></h3>
+<p>This calculates the <b>g</b>reatest <b>c</b>ommon <b>d</b>ivisor of the integer parts of X and Y, drops the stack and leave the result in X.</p>
+
+<h3><span class="key">lcm</span></h3>
+<p>This calculates the <b>l</b>ess <b>c</b>ommon <b>m</b>ultiply of the integer parts of X and Y, drops the stack and leave the result in X.</p>
+
+<h3><span class="key">factor</span></h3>
+<p>This is the only function with 1 input (X) and 3 results X, Y and Z. X is reduced to its integer part u (positive or negative). Pressing <span class="key">factor</span> while u in X leave n in X, p in Y and v in Z, where p<sup>n</sup>&nbsp;&middot;&nbsp;v = u . p is prime and the smallest prime factor of u and n its power. The values n, p and v in X, Y and Z has its motivation that you can press <span class="key">y<sup><small>x</small></sup></span> <span class="key">&times;</span> to get u back again.</p>
+
+<a name="in-out-put">
+<h2>Functions &amp; Input &amp; Output</h2></a>
+
+<table>
+  <tr>
+    <th width="20%">function</th>
+    <th wwwidth="20%">input</th>
+    <th wwwidth="20%">output</th>
+    <th wwwidth="40%">comment</th>
+  </tr>
+
+  <tr class="odd">
+    <td><span class="key">ENTER&uarr;</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="z">z</td></tr>
+        <tr><td>Z:</td> <td class="y">y</td></tr>
+        <tr><td>Y:</td> <td class="x">x</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>auto stack lift is turned off and t is lost</td>
+  </tr>
+    
+  <tr class="even">
+    <td><span class="key">X&harr;Y</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="x">x</td></tr>
+        <tr><td>X:</td> <td class="y">y</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="odd">
+    <td><span class="key">R&darr;</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="x">x</td></tr>
+        <tr><td>Z:</td> <td class="t">t</td></tr>
+        <tr><td>Y:</td> <td class="z">z</td></tr>
+        <tr><td>X:</td> <td class="y">y</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="even">
+    <td><span class="key">&larr;</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="r">0</td></tr>
+      </table>
+    </td>
+    <td>only if not in number input mode - or key is pressed long</td>
+  </tr>
+    
+  <tr class="odd">
+    <td>
+      <span class="key">-</span>
+      <span class="key">+</span>
+      <span class="key">&times;</span>
+      <span class="key">&divide;</span>
+      <span class="key">y<sup><small>x</small></sup></span>
+      <span class="key">mod</span>
+      <span class="key">P<sub><small>x</small></sub><sup><small>y</small></sup></span>
+      <span class="key">C<sub><small>x</small></sub><sup><small>y</small></sup></span>
+      <span class="key">gcd</span>
+      <span class="key">lcm</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="t">t</td></tr>
+        <tr><td>Y:</td> <td class="z">z</td></tr>
+        <tr><td>X:</td> <td class="r">y <i>op</i> x</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="even">
+    <td>
+      <span class="key">CHS</span>
+      <span class="key">e<sup><small>x</small></sup></span>
+      <span class="key">ln</span>
+      <span class="key">10<sup><small>x</small></sup></span>
+      <span class="key">log</span>
+      <span class="key">sin</span>
+      <span class="key">cos</span>
+      <span class="key">tan</span>
+      <span class="key">sin<sup><small>-1</small></sup></span>
+      <span class="key">cos<sup><small>-1</small></sup></span>
+      <span class="key">tan<sup><small>-1</small></sup></span>
+      <span class="key">1/x</span>
+      <span class="key">x!</span>
+      <span class="key">int</span>
+      <span class="key">frac</span>
+      <span class="key">&rarr;HMS</span>
+      <span class="key">&rarr;H</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="r"><i>f(</i> x <i>)</i></td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="odd">
+    <td><span class="key">%</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="r">y&middot;x/100</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="even">
+    <td><span class="key">&Delta;%</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="r">100&middot;(y-x)/y</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="odd">
+    <td><span class="key">&rarr;P</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="r">&phi;</td></tr>
+        <tr><td>X:</td> <td class="r">r</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="even">
+    <td><span class="key">&rarr;R</span></td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">&phi;</td></tr>
+        <tr><td>X:</td> <td class="x">r</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="r">y</td></tr>
+        <tr><td>X:</td> <td class="r">x</td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="odd">
+    <td>
+      <span class="key">&pi;</span>
+      <span class="key">last&nbsp;x</span>
+      <span class="key">RCL</span><span class="digit"><i>d</i></span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="z">z</td></tr>
+        <tr><td>Z:</td> <td class="y">y</td></tr>
+        <tr><td>Y:</td> <td class="x">x</td></tr>
+        <tr><td>X:</td> <td class="r"><i>value</i></td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="even">
+    <td>
+      <span class="key">Cl&Sigma;</span>
+      <span class="key">STO</span><span class="digit">d</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>no effect on the stack</td>
+  </tr>
+    
+  <tr class="odd">
+    <td>
+      <span class="key">&Sigma;+</span>
+      <span class="key">&Sigma;-</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="r"><i>n</i></td></tr>
+      </table>
+    </td>
+    <td>auto stack lift is turned off</td>
+  </tr>
+    
+  <tr class="even">
+    <td>
+      <span class="key">mean</span>
+      <span class="key">sdev</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="y">y</td></tr>
+        <tr><td>Z:</td> <td class="x">x</td></tr>
+        <tr><td>Y:</td> <td class="r">v<sub><small>y</small></sub></td></tr>
+        <tr><td>X:</td> <td class="r">v<sub><small>x</small></sub></td></tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+    
+  <tr class="odd">
+    <td>
+      <span class="key">factor</span>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="t">t</td></tr>
+        <tr><td>Z:</td> <td class="z">z</td></tr>
+        <tr><td>Y:</td> <td class="y">y</td></tr>
+        <tr><td>X:</td> <td class="x">x</td></tr>
+      </table>
+    </td>
+    <td>
+      <table class="stack">
+        <tr><td>T:</td> <td class="y">y</td></tr>
+        <tr><td>Z:</td> <td class="r">u</td></tr>
+        <tr><td>Y:</td> <td class="r">p</td></tr>
+        <tr><td>X:</td> <td class="r">n</td></tr>
+      </table>
+    </td>
+    <td>p<sup><small>n</small></sup>&middot;u&nbsp;=&nbsp;int(x)</td>
+  </tr>
+    
+</table>
+
+</body>
+</html>

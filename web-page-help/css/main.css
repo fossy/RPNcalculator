@@ -1,0 +1,56 @@
+/*
+ * file: main.css
+ *
+ */
+
+body { 
+  font-family:      Helvetica, 'Arial Narrow', 'Microsoft Sans Serif', sans-serif;
+}
+
+span.key, 
+span.digit {
+  color: white;
+  background-color: black;
+  font-size: 90%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-bottom: 0.25em;
+}
+  
+span.digit {
+  background-color: #253541;
+  width: 25em;
+}
+  
+tr.even { background-color: white; }
+tr.odd  { background-color: #f0f0f0; }
+
+table.keyboard td {
+  text-align: center;
+}
+  
+table.stack {
+  border-collapse:collapse;
+  margin-top:    1em;
+  margin-bottom: 1em;
+}
+  
+table.stack, 
+table.stack th, 
+table.stack td {
+  border: 1px solid black;
+}
+  
+table.stack td.x, 
+table.stack td.y, 
+table.stack td.z, 
+table.stack td.t, 
+table.stack td.r {
+  width: 7em;
+  text-align: center;
+}
+  
+td.x { background-color: #ff8080; }
+td.y { background-color: #80ff80; }
+td.z { background-color: #8080ff; }
+td.t { background-color: #ffff80; }
