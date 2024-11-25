@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *
+ * Copyright (c) 2010 J.Fossy Weinzinger <fossy at iwasno dot net>
+ *
+ * This file is part of RPNcalculator.
+ *
+ * RPNcalculator is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RPNcalculator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RPNcalculator.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:orientation="vertical"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:isScrollContainer="true" 
+			  android:scrollbarAlwaysDrawVerticalTrack="true" android:clipChildren="false"> 
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/display_format" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+	    <Spinner android:id="@+id/display_format" 
+	             android:entries="@array/display_formats"
+		    	 android:layout_width="wrap_content" 
+			     android:layout_height="wrap_content">
+	    </Spinner>
+ 		<Spinner android:id="@+id/display_places" 
+	             android:entries="@array/display_places"
+	             android:layout_width="wrap_content" 
+	             android:layout_height="wrap_content">
+	    </Spinner>
+ 		<Spinner android:id="@+id/angle_format" 
+ 		         android:entries="@array/angle_formats"
+	             android:layout_width="wrap_content" 
+	             android:layout_height="wrap_content">
+	    </Spinner>
+
+ 		<ToggleButton
+ 		    android:id="@+id/haptic_feedback"
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="wrap_content"
+ 		    android:text="@string/haptic_feedback" />
+
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:paddingTop="7dp"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content"
+    >
+		<TextView android:text="@string/stack_t" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content"
+        >
+	    </TextView>
+		<TextView android:id="@+id/stack_t" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/stack_z" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/stack_z" 
+		          style="@style/option_value_style">		
+	    </TextView>
+ 	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/stack_y" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/stack_y" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/stack_x" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/stack_x" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+    <!--  -->
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:paddingTop="7dp"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/last_x" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/last_x" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+    <!--  -->
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:paddingTop="7dp"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_0" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_0" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_1" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_1" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_2" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_2" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_3" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_3" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_4" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_4" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_5" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_5" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_6" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_6" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_7" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_7" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_8" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_8" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	              android:orientation="horizontal"
+	              android:layout_width="fill_parent"
+             	  android:layout_height="wrap_content">
+		<TextView android:text="@string/register_9" 
+		     	  android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content">
+	    </TextView>
+		<TextView android:id="@+id/register_9" 
+		          style="@style/option_value_style">
+	    </TextView>
+ 	</LinearLayout>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *
+ * Copyright (c) 2010 J.Fossy Weinzinger <fossy at iwasno dot net>
+ *
+ * This file is part of RPNcalculator.
+ *
+ * RPNcalculator is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RPNcalculator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RPNcalculator.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+-->
+
+<resources>
+    <!-- Application name -->
+    <string name="app_name">RPNcalculator</string>
+    <string name="app_icon_name">RPNcalculator</string>
+        
+    <string name="edit_options_title">Options &amp; Registers</string>
+    <string name="display_format">OPT:</string>
+    
+    <!-- attention
+         the following strings are for the calculators keypad and should not translated
+     -->
+    <string name="digit0">0</string>
+    <string name="digit1">1</string>
+    <string name="digit2">2</string>
+    <string name="digit3">3</string>
+    <string name="digit4">4</string>
+    <string name="digit5">5</string>
+    <string name="digit6">6</string>
+    <string name="digit7">7</string>
+    <string name="digit8">8</string>
+    <string name="digit9">9</string>
+    <string name="enter">ENTER\u2191</string>
+    <string name="chs">CHS</string>
+    <string name="eex">EEX</string>
+    <string name="del">\u2190</string>
+    <string name="div">\u00f7</string>
+    <string name="mul">\u00d7</string>
+    <string name="plus">+</string>
+    <string name="minus">\u2212</string>
+    <string name="dot">.</string>
+    <string name="exp">e<small><sup>x</sup></small></string>
+    <string name="ln">ln</string>
+    <string name="pow10">10<small><sup>x</sup></small></string>
+    <string name="log">log</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="pi">\u03c0</string>
+    <string name="asin">sin<small><sup>-1</sup></small></string>
+    <string name="acos">cos<small><sup>-1</sup></small></string>
+    <string name="atan">tan<small><sup>-1</sup></small></string>
+    <string name="percent">%</string>
+    <string name="square">x<small><sup>2</sup></small></string>
+    <string name="sqrt">\u221ax</string>
+    <string name="power">y<small><sup>x</sup></small></string>
+    <string name="reciprocal">1/x</string>
+    <string name="integer">int</string>
+    <string name="frac">frac</string>
+    <!-- <string name="abs">abs</string> -->
+    <string name="delta_percent">\u0394%</string>
+    <string name="lastx">last <i>x</i></string>
+    <string name="sto">STO</string>
+    <string name="rcl">RCL</string>
+    <string name="clstat">Cl\u03a3</string>
+    <string name="statadd">\u03a3+</string>
+    <string name="statsub">\u03a3-</string>
+    <string name="mean">mean</string>
+    <string name="stddev">sdev</string>
+    <string name="factorial">x!</string>
+    <string name="perm">P<small><sub>x</sub><sup>y</sup></small></string>
+    <string name="comb">C<small><sub>x</sub><sup>y</sup></small></string>
+    <string name="mod">mod</string>
+    <string name="rect">\u2192R</string>   
+    <string name="polar">\u2192P</string>   
+    <string name="hms">\u2192HMS</string>   
+    <string name="hr">\u2192H</string>
+    <string name="swap">x\u2194y</string> <!-- \u21c4 \u21c6 -->
+    <string name="down">R\u2193</string>
+    <!-- <string name="up">R\u2191</string> --> 
+    <string name="prime_factor"><i>factor</i></string>
+    <string name="gcd">gcd</string>
+    <string name="lcm">lcm</string>
+    <!-- end of calculators keypad strings -->  
+
+    <string name="infinity">\u221e</string>
+    <string name="nan">NaN</string>
+    
+    <!-- Menu item text to take user to the screen with the basic digits and operators. -->
+    <string name="digits_panel">Digits panel</string>
+    <string name="functions_panel">Functions panel</string>
+    <string name="statistics_panel">Statistics panel</string>
+    <string name="options">Options</string>
+    <string name="help">Help</string>
+    
+    <string name="haptic_feedback">haptic</string>
+    <!-- Options Register labels -->
+    <string name="stack_x">X:</string>
+    <string name="stack_y">Y:</string>
+    <string name="stack_z">Z:</string>
+    <string name="stack_t">T:</string>
+    <string name="last_x">Last X:</string>
+
+    <string name="register_0">R0:</string>
+    <string name="register_1">R1:</string>
+    <string name="register_2">R2:</string>
+    <string name="register_3">R3:</string>
+    <string name="register_4">R4:	\u03a3x</string>
+    <string name="register_5">R5:	\u03a3x<small><sup>2</sup></small></string>
+    <string name="register_6">R6:	\u03a3y</string>
+    <string name="register_7">R7:	\u03a3y<small><sup>2</sup></small></string>
+    <string name="register_8">R8:	\u03a3xy</string>
+    <string name="register_9">R9:	n</string>
+</resources>

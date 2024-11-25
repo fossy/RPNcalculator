@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout-port -->
+
+<!--
+ *
+ * Copyright (c) 2010 J.Fossy Weinzinger <fossy at iwasno dot net>
+ *
+ * This file is part of RPNcalculator.
+ *
+ * RPNcalculator is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RPNcalculator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RPNcalculator.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#ff000000">
+
+        <LinearLayout
+             android:layout_width="fill_parent"
+             android:orientation="vertical"
+             android:layout_height="0dp"
+             android:layout_weight="1.0">
+            <LinearLayout 
+                android:layout_width="fill_parent"
+             	android:layout_height="wrap_content"
+            	android:orientation="horizontal" 
+            >
+        		<TextView android:id="@+id/angle_format_indicator"
+                          style="@style/indicator_style">
+  				</TextView>
+                  
+        		<TextView android:id="@+id/storage_indicator"
+                          style="@style/indicator_style"
+                          android:text=".:!:.">
+  				</TextView>
+  				
+        		<LinearLayout
+        		    android:layout_width="wrap_content" 
+	             	android:layout_height="wrap_content"
+	            	android:orientation="horizontal"
+	            >
+	        		<TextView android:id="@+id/leftkb_indicator"
+    	                      style="@style/kboff_style" android:text="W">
+  					</TextView>
+        			<TextView android:id="@+id/kb_indicator"
+                	          style="@style/kbon_style" android:text="W">
+  					</TextView>
+        			<TextView android:id="@+id/rightkb_indicator"
+                    	      style="@style/kboff_style" android:text="W">
+  					</TextView>
+  				</LinearLayout>
+  			</LinearLayout>
+                  
+    		<net.iwasno.fossy.rpncalculator.CalculatorDisplay
+                 android:id="@+id/display"
+                 style="@style/display_style" />
+	</LinearLayout>
+	
+    <net.iwasno.fossy.rpncalculator.PanelSwitcher
+         android:id="@+id/panelswitch"
+         android:layout_width="fill_parent"
+         android:layout_height="0dp"
+         android:layout_weight="5.0"
+         >
+
+    <LinearLayout
+         android:id="@+id/digitPad"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:orientation="vertical"
+         android:layout_gravity="center"
+    >
+
+        <LinearLayout
+             android:layout_weight="1.0"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+        >
+
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                 android:id="@+id/enter"
+                 android:text="@string/enter"
+                 style="@style/button_small_style"
+        	     android:layout_weight="0.6667"
+        	     android:layout_width="fill_parent"
+        	     android:layout_height="fill_parent"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                 android:id="@+id/eex"
+                 android:text="@string/eex"
+                 style="@style/button_small_style"
+    	         android:layout_weight="1.0"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                 android:id="@+id/del"
+                 android:text="@string/del"
+                 style="@style/button_style"
+	             android:layout_weight="1.0"
+            />
+		</LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+        >
+             
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/minus"
+                android:text="@string/minus"
+                style="@style/button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit7"
+                android:text="@string/digit7"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit8"
+                android:text="@string/digit8"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit9"
+                android:text="@string/digit9"
+                style="@style/digit_button_style"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+        >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/plus"
+                android:text="@string/plus"
+                style="@style/button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit4"
+                android:text="@string/digit4"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit5"
+                android:text="@string/digit5"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit6"
+                android:text="@string/digit6"
+                style="@style/digit_button_style"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+        >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/mul"
+                android:text="@string/mul"
+                style="@style/button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit1"
+                android:text="@string/digit1"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit2"
+                android:text="@string/digit2"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit3"
+                android:text="@string/digit3"
+                style="@style/digit_button_style"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+        >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/div"
+                android:text="@string/div"
+                style="@style/button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/digit0"
+                android:text="@string/digit0"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/dot"
+                android:text="@string/dot"
+                style="@style/digit_button_style"
+            />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                 android:id="@+id/chs"
+                 android:text="@string/chs"
+                 style="@style/button_small_style"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+	<!-- ________________________________________________________________________________________ -->
+
+    <LinearLayout android:id="@+id/functionsPad"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:layout_gravity="center"
+                  >
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/exp"
+                android:text="@string/exp"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/ln"
+                android:text="@string/ln"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/pow10"
+                android:text="@string/pow10"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/log"
+                android:text="@string/log"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/sin"
+                android:text="@string/sin"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/cos"
+                android:text="@string/cos"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/tan"
+                android:text="@string/tan"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/pi"
+                android:text="@string/pi"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/asin"
+                android:text="@string/asin"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/acos"
+                android:text="@string/acos"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/atan"
+                android:text="@string/atan"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/mod"
+                android:text="@string/mod"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/square"
+                android:text="@string/square"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/sqrt"
+                android:text="@string/sqrt"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/power"
+                android:text="@string/power"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/reciprocal"
+                android:text="@string/reciprocal"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/integer"
+                android:text="@string/integer"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/frac"
+                android:text="@string/frac"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/percent"
+                android:text="@string/percent"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/delta_percent"
+                android:text="@string/delta_percent"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+	<!-- ________________________________________________________________________________________ -->
+
+    <LinearLayout android:id="@+id/statisticsPad"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:layout_gravity="center"
+                  >
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/lastx"
+                android:text="@string/lastx"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/sto"
+                android:text="@string/sto"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/rcl"
+                android:text="@string/rcl"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/clstat"
+                android:text="@string/clstat"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/statadd"
+                android:text="@string/statadd"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/statsub"
+                android:text="@string/statsub"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/mean"
+                android:text="@string/mean"
+                style="@style/button_verysmall_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/stddev"
+                android:text="@string/stddev"
+                style="@style/button_verysmall_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/factorial"
+                android:text="@string/factorial"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/perm"
+                android:text="@string/perm"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/comb"
+                android:text="@string/comb"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/prime_factor"
+                android:text="@string/prime_factor"
+                style="@style/button_verysmall_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/rect"
+                android:text="@string/rect"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/polar"
+                android:text="@string/polar"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/hms"
+                android:text="@string/hms"
+                style="@style/button_verysmall_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/hr"
+                android:text="@string/hr"
+                style="@style/button_verysmall_style"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+             >
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/swap"
+                android:text="@string/swap"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/down"
+                android:text="@string/down"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/gcd"
+                android:text="@string/gcd"
+                style="@style/button_small_style"
+                />
+            <net.iwasno.fossy.rpncalculator.ColorButton
+                android:id="@+id/lcm"
+                android:text="@string/lcm"
+                style="@style/button_small_style"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </net.iwasno.fossy.rpncalculator.PanelSwitcher>
+</LinearLayout>

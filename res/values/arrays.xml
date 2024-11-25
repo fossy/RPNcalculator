@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *
+ * Copyright (c) 2010 J.Fossy Weinzinger <fossy at iwasno dot net>
+ *
+ * This file is part of RPNcalculator.
+ *
+ * RPNcalculator is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RPNcalculator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RPNcalculator.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+-->
+
+<resources>
+	<string-array name="display_formats">
+        <item>FIX</item>
+        <item>SCI</item>
+        <item>ENG</item>
+    </string-array>
+
+	<string-array name="display_places">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+	<string-array name="angle_formats">
+        <item>RAD</item>
+        <item>DEG</item>
+        <item>GRAD</item>
+    </string-array>
+
+	<string-array name="kb_indicators">
+        <item>5</item>
+        <item>f</item>
+        <item>\u03a3</item>
+    </string-array>
+
+</resources>
